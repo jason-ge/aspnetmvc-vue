@@ -1,0 +1,132 @@
+﻿@using System.Web.Optimization
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link href="/Scripts/vendors.css" rel="stylesheet" />
+    <link href="/Scripts/main.css" rel="stylesheet" />
+    <base href="/" />
+    <script>
+        var baseUrl = document.getElementsByTagName('base')[0].href;
+    </script>
+</head>
+<body>
+    <div id="app">
+        <div class="userBarRow">
+            <div class="userBarWrapper grid-container">
+                <div class="grid-x grid-margin-x">
+                    <div class="cell small-6">
+                    </div>
+                    <div class="cell small-6" align="right">
+                        <a style="cursor: pointer;" onclick="window.print()" aria-haspopup="true" tabindex="0">
+                            <font-awesome-icon icon="print"></font-awesome-icon> <span>Print</span>
+                        </a>
+                        <span class="verticalDivider">|</span>
+                        <a style="cursor: pointer;" data-open="contactsModal">
+                            <font-awesome-icon icon="user"></font-awesome-icon> <span>Contacts</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end userBar div -->
+        <div style="clear: both;"></div>
+        <div class="bannerRow">
+            <div class="bannerWrapper grid-container">
+                <div class="grid-x align-middle">
+                    <div class="cell medium-auto">
+                        <img alt="" src='@Url.Content("~/images/logos/logo_en-US.png")' border="0">
+                    </div>
+                    <div class="cell medium-shrink">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topNavRow">
+            <div class="topNavWrapper grid-container">
+                <div class="grid-x">
+                    <div class="cell small-12">
+                        <div class="topNavBar">
+                            <div class="topNavBar_wrapper">
+                                <a class="topNav_item" href="@Url.Action("Home", "Home")">Home</a>
+                                <a class="topNav_item" href='@Url.Action("PersonalData", "Home")'>Personal Data</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end topNav div -->
+
+        <div class="mainRow">
+            <div class="mainWrapper grid-container">
+                <div id="main">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+
+        <div class="footerRow">
+            <!-- <div class="footerWrapper grid-container"> -->
+            <div class="footerWrapper grid-container">
+                <!-- <div class="rowXXX"> -->
+                <div class="grid-x">
+                    <!-- <div class="col-xs-12"> -->
+                    <div class="small-12">
+                        &copy; All rights reserved.
+                        <div>
+                            <a id="userAgreementLink2Modal" data-open="userAgreementModal">Terms of Use and Privacy Notice</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="contactsModal" class="reveal" data-reveal>
+            <h3>Contact</h3>
+            <p>If you have questions about your personal information, you can contact:</p>
+            <div class="grid-x grid-padding-x align-center">
+                <div class="cell medium-10">
+                    <div class="callout ">
+                        <h6>Call Center </h6>
+                        <ul class="fa-ul">
+                            <li><span class="fa-li"><font-awesome-icon icon="phone"></font-awesome-icon></span>1-800.xxx.xxxx</li>
+                            <li><span class="fa-li"><font-awesome-icon icon="clock"></font-awesome-icon></span>Monday through Friday <nobr>from 8:00 am to 6:00 pm CST</nobr></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <button class="button" data-close aria-label="Close modal" type="button">
+                Close
+            </button>
+        </div>
+
+        <div id="userAgreementModal" class="reveal large" data-reveal>
+            <user-agreement-content :employee="employee"></user-agreement-content>
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <button class="button" data-close aria-label="Close modal" type="button" style="margin-top: 1rem;">
+                <span aria-hidden="true">Close</span>
+            </button>
+        </div>
+    </div>
+    @Scripts.Render("~/Scripts/es6-promise.min.js")
+    @Scripts.Render("~/Scripts/es6-promise.auto.min.js")
+    @Scripts.Render("~/Scripts/vendors.js")
+    @Scripts.Render("~/Scripts/main.js")
+    <script>
+        $(document).ready(function () {
+            $(document).foundation();
+        });
+    </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

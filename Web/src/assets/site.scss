@@ -1,0 +1,291 @@
+$brand-color: #08c;
+$brand-lighter: hsla(200, 100%, 70%, 1);
+$brand-darker: hsla(200, 100%, 30%, 1);
+$font-path: '../assets/fonts/ProximaNova/';
+
+@font-face {
+    font-family: "pmRegular";
+    src: url($font-path + 'ProximaNova-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: "pmBold";
+    src: url($font-path + 'ProximaNova-Bold.otf') format('opentype');
+}
+
+/*End of WebFonts */
+
+html{opacity: 1;}
+body{font: 16px "pmRegular", Verdana,Arial,Helvetica,sans-serif; line-height:1.4 ;}
+@media (max-width:64em){body{font-size:13px;}}
+
+strong  {font-weight: normal; font-family:"pmBold"; }
+b     {font-weight: normal; font-family:"pmBold"; }
+
+a{color: $brand-color;text-decoration:underline;}
+a:link{color: $brand-color; }
+a:hover{color: var(--brand-lighter);text-decoration:underline;}
+ul {opacity: 1;}
+li {line-height: 1.3;margin-bottom: 0.5rem;}
+
+h1,h2,h3,h4,h5,h6 {color: $brand-color;font-weight:bold;}
+h1{font-size:1.75rem;margin-top:1rem; margin-bottom:1rem; }
+h2{font-size:1.5rem;margin-top:1rem;margin-bottom:1rem;}
+h3{margin-top:0.75rem}
+h4{margin-top:0.75rem}
+h5{margin-top:0.75rem;margin-bottom: 0.3rem;}
+h6{margin-top:0.75rem}
+
+table {
+    th {
+        background: #ddd;
+        font-weight: normal;
+        font-family: "pmBold";
+        text-align: center;
+    }
+    tbody {
+        th, td {
+            border-bottom: 1px solid #999;
+        }
+    }
+
+    thead {
+        th {
+            background: #ddd;
+        }
+        td {
+            background: #eee;
+        }
+    }
+
+    tfoot {
+        th, td {
+            background: #ddd;
+        }
+    }
+}
+
+    .field-validation-error {
+    color: red;
+    font-weight: bold;
+}
+
+hr {
+    border-top-color: #CCCCCC;
+    border-top-style: solid;
+    border-top-width: 1px;
+    margin: 0.5em 0em
+}
+
+textarea {
+    padding-left: 15px
+}
+
+form {
+    margin: 0px;
+    padding: 0px
+}
+
+.topNavRow {
+    background: #000;
+    color: #fff;
+    min-height: 20px;
+}
+
+.topNavWrapper {
+    margin: auto;
+    max-width: 1200px;
+}
+
+@media (max-width:64rem) {
+    .topNavWrapper {
+        opacity: 1;
+    }
+}
+
+.topNavBar {
+    opacity: 1;
+    a {
+        color: #fff !important;
+        font-size: 1.01rem;
+        line-height: 1.4rem;
+        margin: 0rem 0rem 0rem 0rem;
+        outline: 0px;
+        padding: 1rem 1.5rem;
+        text-decoration: none;
+        cursor: pointer;
+        display: inline-block;
+    }
+    a:hover {
+        background: $brand-color;
+        color: #fff;
+    }
+
+    a.topNav_item_selected {
+        background: $brand-color;
+        color: #fff;
+    }
+}
+
+@media (max-width:40rem) {
+    .topNavBar a:link {
+        font-size: 0.8rem;
+        padding: 0.25rem 0.75rem
+    }
+}
+
+.mainRow {
+    background: #FFFFFF
+}
+
+.mainWrapper {
+    margin: auto;
+    max-width: 1200px;
+}
+
+@media (max-width:64rem) {
+    .mainWrapper {
+    }
+}
+
+.footerRow {
+    background: #888;
+    margin-top: 3em;
+    min-height: 100px;
+    padding-top: 1em;
+    a {
+        color: #FFFFFF !important
+    }
+
+    a:link {
+        color: #FFFFFF !important
+    }
+
+    a:visited {
+        color: #FFFFFF !important
+    }
+
+    a:hover {
+        color: #FFFFFF !important
+    }
+
+    a:active {
+        color: #FFFFFF !important
+    }
+}
+.footerWrapper {
+    color: #FFFFFF;
+    margin: auto;
+    max-width: 1200px;
+}
+
+.table-border thead {
+    border: 1px solid $brand-color !important;
+}
+
+.table-border tbody {
+    border: 1px solid $brand-color !important;
+}
+
+.table-border tbody tr:nth-last-child(1) td {
+    border-bottom: 1px solid $brand-color !important;
+}
+
+.reveal h1 {
+    font-size: 1.5rem;
+    margin-top: 0rem
+}
+
+.reveal h2 {
+    font-size: 1.5rem;
+    margin-top: 0rem
+}
+
+.reveal h3 {
+    font-size: 1.5rem;
+    margin-top: 0rem
+}
+
+.reveal h4 {
+    font-size: 1.35rem;
+    margin-top: 0rem
+}
+
+.reveal h5 {
+    font-size: 1.25rem;
+    margin-top: 0rem
+}
+
+.reveal h6 {
+    font-size: 1.15rem;
+    margin-top: 0rem
+}
+
+.validationError {
+    background: #FFC;
+    color: #900;
+}
+
+.bannerRow {
+    padding-bottom: 0px
+}
+
+.bannerWrapper {
+    margin: auto !important;
+    padding: 0px !important;
+    text-align: center;
+}
+
+.userBarRow {
+    background: #E4E5E6
+}
+
+.userBarWrapper {
+    margin: auto;
+    max-width: 1200px;
+    min-height: 30px;
+    padding-top: 0.2rem;
+}
+
+@media (max-width:64rem) {
+    .userBarWrapper {
+    }
+}
+
+.userBarRow a {
+    color: #000000;
+    text-decoration: none
+}
+
+.userBarRow a:hover {
+    color: #AAAAAA;
+    text-decoration: none
+}
+
+.verticalDivider {
+    color: #888888;
+    padding-left: 15px;
+    padding-right: 15px
+}
+
+@media (max-width:64em) {
+    .verticalDivider {
+        padding: 0px
+    }
+}
+
+.button {
+    background: $brand-color !important;
+    color: #FFFFFF !important;
+    text-decoration: none;
+    padding: 0.65rem 1.05rem;
+    margin-bottom: 0rem;
+    border: 1px solid $brand-darker !important;
+    border-radius: 4px;
+}
+
+.button:hover {
+    background: $brand-darker !important;
+    color: #FFFFFF;
+    border: 1px solid $brand-color !important;
+}
